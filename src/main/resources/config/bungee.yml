@@ -1,0 +1,5 @@
+suicide:
+  command: /suicide
+  items: []
+  message: "&bAre you sure you want to kill yourself? Type &c/gconfirm &bto confirm"
+  delay: 30

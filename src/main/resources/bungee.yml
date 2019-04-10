@@ -1,0 +1,5 @@
+name: CmdConfirm
+version: @version@
+description: Confirm any command
+main: hazae41.minecraft.cmdconfirm.CmdConfirmBungee
+author: Hazae41

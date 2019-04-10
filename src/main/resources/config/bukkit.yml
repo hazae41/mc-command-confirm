@@ -1,0 +1,11 @@
+selldiamonds:
+  command: /sell hand
+  items:
+  - diamond
+  message: "&bAre you sure you want to sell this? Type &c/confirm &bto confirm"
+  delay: 30
+suicide:
+  command: /suicide
+  items: []
+  message: "&bAre you sure you want to kill yourself? Type &c/confirm &bto confirm"
+  delay: 30

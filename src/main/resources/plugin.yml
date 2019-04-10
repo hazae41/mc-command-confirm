@@ -1,0 +1,12 @@
+name: CmdConfirm
+version: @version@
+description: Confirm any command
+main: hazae41.minecraft.cmdconfirm.CmdConfirmBukkit
+author: Hazae41
+
+commands:
+  cmdconfirm:
+    usage: /cmdconfirm
+    permission: cmdconfirm.reload
+  confirm:
+    usage: /confirm
