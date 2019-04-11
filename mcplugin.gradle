@@ -3,29 +3,26 @@ repositories {
 }
 
 dependencies {
-    implementation "com.github.Hazae41:Kotlin4MC:-SNAPSHOT"
+    implementation "com.github.Hazae41:Kotlin4MC:master-SNAPSHOT"
 }
 
 // Resources parser
 import org.apache.tools.ant.filters.ReplaceTokens
 processResources.with copySpec {
     from 'src/main/resources' // Resources folder
-    filter(ReplaceTokens, tokens: ['version':version])
+    filter(ReplaceTokens, tokens: [ // Placeholders to replace
+        'version':version,
+    ])
 }
 
-// Task for creating the jar file
-task bundle (type: Jar){
-    group = "build"
-    classifier "bundle"
-    from sourceSets.main.output
+tasks.shadowJar {
+    classifier = 'bundle'
+    dependsOn tasks.relocateShadowJar
     dependsOn 'clean'
     mustRunAfter 'clean'
     destinationDir = file("$rootDir/jar")
-    from {
-        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
-    }
 }
 
 artifacts {
-    archives bundle
+    archives shadowJar
 }
